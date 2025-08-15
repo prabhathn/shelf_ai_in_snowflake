@@ -1,6 +1,7 @@
 # Shelf AI Analysis in Snowflake
 ## Status: Work in Progress
 ```
+TODO:
 1. Finalize image processing of crops into structured data
 2. Cortex handler to determine if the image is of a shelf or some other in-store object (promotion, endcap, etc)
 3. Faster algorithms for merging and unifying masks (current approach is too slow)
