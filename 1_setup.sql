@@ -41,6 +41,32 @@ CREATE STAGE SHELF_IMAGE_UPLOAD
 
 
 -- ###############################################################################################
+-- CREATE WAREHOUSES AND COMPUTE POOLS
+--
+-- Compute pools are special objects that can use GPU or CPU machines instead of Snowflake
+-- warehouse compute. 
+-- ###############################################################################################
+
+-- Create the warehouse for notebook usage
+-- Note - this is not the compute that runs the models, just orchestrates the notebook itself.
+CREATE OR REPLACE WAREHOUSE SHELF_AI_WH_XS
+    WAREHOUSE_SIZE = XSMALL
+    AUTO_SUSPEND = 120
+    AUTO_RESUME = TRUE;
+
+-- Create the compute pool for the demo. See documentation for CREATE COMPUTE POOL
+-- for more information on other INSTANCE_FAMILY values
+CREATE COMPUTE POOL IF NOT EXISTS SHELF_AI_GPU_M
+    MIN_NODES = 1
+    MAX_NODES = 1
+    INSTANCE_FAMILY = GPU_NV_M
+    AUTO_SUSPEND_SECS = 100
+    AUTO_RESUME = true
+    INITIALLY_SUSPENDED = true
+    COMMENT = 'Small pool for running the shelf AI demo';
+
+
+-- ###############################################################################################
 -- CREATE EXTERNAL ACCESS INTEGRATIONS (EAI'S)
 --
 -- EAI's are specific security features that allow Snowflake to access an external
