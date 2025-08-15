@@ -1,5 +1,12 @@
 # Shelf AI Analysis in Snowflake
-### Status: Work in Progress
+## Status: Work in Progress
+```
+1. Finalize image processing of crops into structured data
+2. Cortex handler to determine if the image is of a shelf or some other in-store object (promotion, endcap, etc)
+3. Faster algorithms for merging and unifying masks (current approach is too slow)
+```
+
+### About
 Use Cortex AI and Meta's SegmentAnything model to analyze a shelf image for Category Management or Auditing. The goal of this demo is to show how images of store shelves can be processed for a number of purposes.
 
 ### Context & Business Problem
