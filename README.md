@@ -18,6 +18,9 @@ There are several approaches that will be tried in this demo.
 1. Leveraging native Snowflake Cortex multi-modal features to query the shelf
 2. Using image segmentation techniques to process the image and break it up into components (e.g. products, shelves, price tags, etc)
 
+The general architecture and data process will look like the below. Blue shaded squares have been contemplated in the current `main` branch.
+![Reference Architecture and Data Flow](/assets/solution_ref_arch.png)
+
 ### Outputs
 Original shelf image
 ![Original shelf image of a packaged pasta brand called Wicked](/assets/shelf_original.png)
